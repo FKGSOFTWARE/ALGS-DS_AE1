@@ -3,7 +3,33 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class TimeSortingAlgorithms {
-    
+    public static int[] arr = null;
+    public static int count;
+    public static String filePrepend = "C:/Users/fkgde/Repos/ALG+DS/AE1/ALGS-DS_AE1/AE1_Java/src/";
+    public static String fileAppend;
+    public static String filename;
+    public static String[] fileNames = {"int1000.txt", "int20k.txt", "int500k.txt", "dutch.txt", "intBig.txt"};
+    public static long startTime;
+    public static long endTime;
+    public static long elapsedTime;
+
+    // public static void arrayTestRunner(Object function) throws FileNotFoundException{
+    //     for (String fileAppend : fileNames){
+    //         filename = filePrepend + fileAppend;
+    //         arr = readArray(filename);
+    //         count = readArrayNoLines(filename);
+    //         System.out.print("QuickSort - " + fileAppend + ": ");
+    //         startTime = System.nanoTime();
+    //         // QuickSort.quickSort(arr);
+    //         function;
+    //         endTime = System.nanoTime();
+    //         elapsedTime = endTime - startTime;
+    //         System.out.println(elapsedTime + "ns, with " + count + " elements.");
+    //     }
+        
+    // };
+
+
     public static int[] readArray(String filename) throws FileNotFoundException {
         // Open the file using a Scanner
         Scanner scanner = new Scanner(new File(filename));
@@ -47,26 +73,20 @@ public class TimeSortingAlgorithms {
 
 public static void main(String[] args) throws FileNotFoundException {
     
-    int[] arr = null;
-    int count;
-    String filePrepend = "C:/Users/fkgde/OneDrive - University of Glasgow/Desktop/ALGS+DS/AE1 Fix/AE1_2/src/";
-    
-    String fileAppend;
-    String filename;
-    
 
+    
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //quick
     fileAppend = "int1000.txt";
     filename = filePrepend + fileAppend;
     arr = readArray(filename);
     count = readArrayNoLines(filename);
     System.out.print("QuickSort - " + fileAppend + ": ");
-    long startTime = System.nanoTime();
+    startTime = System.nanoTime();
     QuickSort.quickSort(arr);
-    long endTime = System.nanoTime();
-    long elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "int20k.txt";
     filename = filePrepend + fileAppend;
@@ -77,9 +97,7 @@ public static void main(String[] args) throws FileNotFoundException {
     QuickSort.quickSort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "int500k.txt";
     filename = filePrepend + fileAppend;
@@ -90,9 +108,7 @@ public static void main(String[] args) throws FileNotFoundException {
     QuickSort.quickSort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "dutch.txt";
     filename = filePrepend + fileAppend;
@@ -103,8 +119,7 @@ public static void main(String[] args) throws FileNotFoundException {
     QuickSort.quickSort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "intBig.txt";
     filename = filePrepend + fileAppend;
@@ -115,70 +130,66 @@ public static void main(String[] args) throws FileNotFoundException {
     QuickSort.quickSort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//         //quick
-//         int k = 4;
-//         System.out.print("\n");
-//         fileAppend = "int1000.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         QuickSortWithInsertionSort.sort(arr, k);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+//         //quick w/ insertsort
+        int k = 4;
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-        
-//         fileAppend = "int20k.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         QuickSortWithInsertionSort.sort(arr, k);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-//         fileAppend = "int500k.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         QuickSortWithInsertionSort.sort(arr, k);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
-//         fileAppend = "dutch.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         QuickSortWithInsertionSort.sort(arr, k);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
     
-
-//         fileAppend = "intBig.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         QuickSortWithInsertionSort.sort(arr, k);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //         //median 3
@@ -192,9 +203,8 @@ public static void main(String[] args) throws FileNotFoundException {
         QuickSortMedianOfThree.quickSort(arr);
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
-        System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-        
         fileAppend = "int20k.txt";
         filename = filePrepend + fileAppend;
         arr = readArray(filename);
@@ -204,9 +214,7 @@ public static void main(String[] args) throws FileNotFoundException {
         QuickSortMedianOfThree.quickSort(arr);
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
-        System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
         fileAppend = "int500k.txt";
         filename = filePrepend + fileAppend;
@@ -217,9 +225,7 @@ public static void main(String[] args) throws FileNotFoundException {
         QuickSortMedianOfThree.quickSort(arr);
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
-        System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
         fileAppend = "dutch.txt";
         filename = filePrepend + fileAppend;
@@ -230,9 +236,7 @@ public static void main(String[] args) throws FileNotFoundException {
         QuickSortMedianOfThree.quickSort(arr);
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
-        System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-    
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
         fileAppend = "intBig.txt";
         filename = filePrepend + fileAppend;
@@ -243,137 +247,123 @@ public static void main(String[] args) throws FileNotFoundException {
         QuickSortMedianOfThree.quickSort(arr);
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime;
-        System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //         //3-way
-//         System.out.print("\n");
-//         fileAppend = "int1000.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-        
-//         fileAppend = "int20k.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-//         fileAppend = "int500k.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
-//         fileAppend = "dutch.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
     
-
-//         fileAppend = "intBig.txt";
-//         filename = filePrepend + fileAppend;
-//         arr = readArray(filename);
-//         count = readArrayNoLines(filename);
-//         System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
-//         startTime = System.nanoTime();
-//         ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
-//         endTime = System.nanoTime();
-//         elapsedTime = endTime - startTime;
-//         System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("ThreeWayQuicksort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        ThreeWayQuicksort.sort(arr, 0, arr.length - 1);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
     
 //     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //     //insertion
-//     System.out.print("\n");
-//     fileAppend = "int1000.txt";
-//     filename = filePrepend + fileAppend;
-//     arr = readArray(filename);
-//     count = readArrayNoLines(filename);
-//     System.out.print("InsertionSort - " + fileAppend + ": ");
-//     startTime = System.nanoTime();
-//     InsertionSort.sort(arr);
-//     endTime = System.nanoTime();
-//     elapsedTime = endTime - startTime;
-//     System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+    System.out.print("\n");
+    fileAppend = "int1000.txt";
+    filename = filePrepend + fileAppend;
+    arr = readArray(filename);
+    count = readArrayNoLines(filename);
+    System.out.print("InsertionSort - " + fileAppend + ": ");
+    startTime = System.nanoTime();
+    InsertionSort.sort(arr);
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-//     fileAppend = "int20k.txt";
-//     filename = filePrepend + fileAppend;
-//     arr = readArray(filename);
-//     count = readArrayNoLines(filename);
-//     System.out.print("InsertionSort - " + fileAppend + ": ");
-//     startTime = System.nanoTime();
-//     InsertionSort.sort(arr);
-//     endTime = System.nanoTime();
-//     elapsedTime = endTime - startTime;
-//     System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+    fileAppend = "int20k.txt";
+    filename = filePrepend + fileAppend;
+    arr = readArray(filename);
+    count = readArrayNoLines(filename);
+    System.out.print("InsertionSort - " + fileAppend + ": ");
+    startTime = System.nanoTime();
+    InsertionSort.sort(arr);
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
+    fileAppend = "int500k.txt";
+    filename = filePrepend + fileAppend;
+    arr = readArray(filename);
+    count = readArrayNoLines(filename);
+    System.out.print("InsertionSort - " + fileAppend + ": ");
+    startTime = System.nanoTime();
+    InsertionSort.sort(arr);
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
+    fileAppend = "dutch.txt";
+    filename = filePrepend + fileAppend;
+    arr = readArray(filename);
+    count = readArrayNoLines(filename);
+    System.out.print("InsertionSort - " + fileAppend + ": ");
+    startTime = System.nanoTime();
+    InsertionSort.sort(arr);
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-//     fileAppend = "int500k.txt";
-//     filename = filePrepend + fileAppend;
-//     arr = readArray(filename);
-//     count = readArrayNoLines(filename);
-//     System.out.print("InsertionSort - " + fileAppend + ": ");
-//     startTime = System.nanoTime();
-//     InsertionSort.sort(arr);
-//     endTime = System.nanoTime();
-//     elapsedTime = endTime - startTime;
-//     System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
-
-//     fileAppend = "dutch.txt";
-//     filename = filePrepend + fileAppend;
-//     arr = readArray(filename);
-//     count = readArrayNoLines(filename);
-//     System.out.print("InsertionSort - " + fileAppend + ": ");
-//     startTime = System.nanoTime();
-//     InsertionSort.sort(arr);
-//     endTime = System.nanoTime();
-//     elapsedTime = endTime - startTime;
-//     System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
-
-//     fileAppend = "intBig.txt";
-//     filename = filePrepend + fileAppend;
-//     arr = readArray(filename);
-//     count = readArrayNoLines(filename);
-//     System.out.print("InsertionSort - " + fileAppend + ": ");
-//     startTime = System.nanoTime();
-//     InsertionSort.sort(arr);
-//     endTime = System.nanoTime();
-//     elapsedTime = endTime - startTime;
-//     System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
-    
+    fileAppend = "intBig.txt";
+    filename = filePrepend + fileAppend;
+    arr = readArray(filename);
+    count = readArrayNoLines(filename);
+    System.out.print("InsertionSort - " + fileAppend + ": ");
+    startTime = System.nanoTime();
+    InsertionSort.sort(arr);
+    endTime = System.nanoTime();
+    elapsedTime = endTime - startTime;
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //MergeSort
@@ -387,7 +377,7 @@ public static void main(String[] args) throws FileNotFoundException {
     MergeSort.sort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "int20k.txt";
     filename = filePrepend + fileAppend;
@@ -398,8 +388,7 @@ public static void main(String[] args) throws FileNotFoundException {
     MergeSort.sort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "int500k.txt";
     filename = filePrepend + fileAppend;
@@ -410,9 +399,7 @@ public static void main(String[] args) throws FileNotFoundException {
     MergeSort.sort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "dutch.txt";
     filename = filePrepend + fileAppend;
@@ -423,9 +410,7 @@ public static void main(String[] args) throws FileNotFoundException {
     MergeSort.sort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
-
-
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
     fileAppend = "intBig.txt";
     filename = filePrepend + fileAppend;
@@ -436,8 +421,7 @@ public static void main(String[] args) throws FileNotFoundException {
     MergeSort.sort(arr);
     endTime = System.nanoTime();
     elapsedTime = endTime - startTime;
-    System.out.println("Elapsed time in nanoseconds: " + elapsedTime + ", counting " + count + " elements.");
+    System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-
-}
+    }
 }

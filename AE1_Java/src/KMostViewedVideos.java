@@ -20,10 +20,7 @@ public class KMostViewedVideos {
         return result;
     }
 
-
-
-
-
+//// TEST for k most Viewed video
     public static void main(String[] args) {
         int[] views1 = {10, 50, 20, 30, 40};
         int[] kMostViewed1 = getKMostViewedVideos(views1, 3);
