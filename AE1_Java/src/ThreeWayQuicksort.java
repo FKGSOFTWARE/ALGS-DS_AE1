@@ -1,12 +1,4 @@
-// import java.util.Arrays;
-
 public class ThreeWayQuicksort{
-  // public static void main(String[] args) {
-  //   int[] array = {5, 8, 1, 3, 7, 9, 2,77,3,1234,5,3,12,54,6,7754,2,3,45,7,210};
-  //   System.out.println("Before sorting: " + Arrays.toString(array));
-  //   sort(array, 0, array.length - 1);
-  //   System.out.println("After sorting: " + Arrays.toString(array));
-  // }
 
   public static void sort(int[] array, int leftIndex, int rightIndex) {
     if (rightIndex <= leftIndex) {

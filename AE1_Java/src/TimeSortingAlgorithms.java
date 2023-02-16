@@ -13,23 +13,6 @@ public class TimeSortingAlgorithms {
     public static long endTime;
     public static long elapsedTime;
 
-    // public static void arrayTestRunner(Object function) throws FileNotFoundException{
-    //     for (String fileAppend : fileNames){
-    //         filename = filePrepend + fileAppend;
-    //         arr = readArray(filename);
-    //         count = readArrayNoLines(filename);
-    //         System.out.print("QuickSort - " + fileAppend + ": ");
-    //         startTime = System.nanoTime();
-    //         // QuickSort.quickSort(arr);
-    //         function;
-    //         endTime = System.nanoTime();
-    //         elapsedTime = endTime - startTime;
-    //         System.out.println(elapsedTime + "ns, with " + count + " elements.");
-    //     }
-        
-    // };
-
-
     public static int[] readArray(String filename) throws FileNotFoundException {
         // Open the file using a Scanner
         Scanner scanner = new Scanner(new File(filename));
@@ -75,8 +58,8 @@ public static void main(String[] args) throws FileNotFoundException {
     
 
     
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    //quick
+// //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//     //quick
     fileAppend = "int1000.txt";
     filename = filePrepend + fileAppend;
     arr = readArray(filename);
@@ -134,7 +117,240 @@ public static void main(String[] args) throws FileNotFoundException {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //         //quick w/ insertsort
-        int k = 4;
+        int k = 5;        
+        System.out.print("\nk = " + k);
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+    
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        k = 10;        
+        System.out.print("\nk = " + k);
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+    
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        k = 15;        
+        System.out.print("\nk = " + k);
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+    
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        k = 20;        
+        System.out.print("\nk = " + k);
+        System.out.print("\n");
+        fileAppend = "int1000.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int20k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "int500k.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        fileAppend = "dutch.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+    
+        fileAppend = "intBig.txt";
+        filename = filePrepend + fileAppend;
+        arr = readArray(filename);
+        count = readArrayNoLines(filename);
+        System.out.print("QuickSortWithInsertionSort - " + fileAppend + ": ");
+        startTime = System.nanoTime();
+        QuickSortWithInsertionSort.sort(arr, k);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;
+        System.out.println(elapsedTime + "ns, with " + count + " elements.");
+
+        k = 25;        
+        System.out.print("\nk = " + k);
         System.out.print("\n");
         fileAppend = "int1000.txt";
         filename = filePrepend + fileAppend;
@@ -192,7 +408,7 @@ public static void main(String[] args) throws FileNotFoundException {
         System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
 // ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//         //median 3
+        //median 3
         System.out.print("\n");
         fileAppend = "int1000.txt";
         filename = filePrepend + fileAppend;
@@ -249,7 +465,7 @@ public static void main(String[] args) throws FileNotFoundException {
         elapsedTime = endTime - startTime;
         System.out.println(elapsedTime + "ns, with " + count + " elements.");
 
-// ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //         //3-way
         System.out.print("\n");
         fileAppend = "int1000.txt";
@@ -307,8 +523,8 @@ public static void main(String[] args) throws FileNotFoundException {
         elapsedTime = endTime - startTime;
         System.out.println(elapsedTime + "ns, with " + count + " elements.");
     
-//     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//     //insertion
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    //insertion
     System.out.print("\n");
     fileAppend = "int1000.txt";
     filename = filePrepend + fileAppend;
